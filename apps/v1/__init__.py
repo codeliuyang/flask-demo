@@ -1,11 +1,11 @@
 from flask import Blueprint
 from flask_restful import Api
-from apps.v1.city.CityApi import City
+from apps.v1.api.city_resource import CityResource
 
 
 def register_views(app):
     api = Api(app)
-    api.add_resource(City, '/city', endpoint='city')
+    api.add_resource(CityResource, '/city', endpoint='city')
 
 
 def create_blueprint_v1():
