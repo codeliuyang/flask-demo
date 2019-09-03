@@ -40,12 +40,17 @@ $ pip install PyMySQL
 
 2. 如何自动生成依赖清单
 
-使用```pipreqs```会在项目根目录生成requirements.txt，不过实际下来差了一个PyMySQL需要手动补上。
+使用```pipreqs```会在项目根目录生成requirements.txt，不过实际下来差了一个```PyMySQL==0.9.3```需要手动补上。
 ```
 $ pip install pipreqs
-$ cd 项目根目录
+$ cd [项目根目录]
 // 如果是windows环境下，需要加上编码
 $ pipreqs ./ --encoding=utf8
+```
+
+一键下载所有的包
+```
+pip install -r requirements.txt
 ```
 
 ## Usage
