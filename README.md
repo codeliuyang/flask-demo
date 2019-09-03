@@ -39,6 +39,10 @@ $ pip install Flask-SQLAlchemy
 $ pip install PyMySQL
 ```
 
+```
+pipreqs ./ --encoding=utf8
+```
+
 ## Usage
 
 ```
