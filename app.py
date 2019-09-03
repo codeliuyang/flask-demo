@@ -1,13 +1,16 @@
 from flask import Flask
 from apps import register_blueprints
 from db_ext import db
+from config import config
+from log_config import log_format
 
 flask_app = Flask(__name__)
 
-# 设置Database的URL，写明charset，建议为utf8mb4
-flask_app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:1qazxsw2@localhost:3306/pydb?charset=utf8mb4'
-# 设置Database的SQL打印
-flask_app.config["SQLALCHEMY_ECHO"] = True
+# 如果单独设置环境参数，则如下设置
+# flask_app.config["SQLALCHEMY_ECHO"] = True # 设置SQL日志是否打印
+
+# 获取相应环境的配置类
+flask_app.config.from_object(config['dev'])
 
 
 def init_app(app):
@@ -24,5 +27,5 @@ init_app(flask_app)
 '''
 if __name__ == '__main__':
     # flask_app.run()
-    flask_app.run(host='0.0.0.0', debug=True)
-
+    log_format(flask_app)
+    flask_app.run(host='0.0.0.0')

@@ -1,0 +1,4 @@
+2019-09-03 17:40:13,180 - INFO - city_api.py - get_city_by_id - 15 - you need to query city_id = 99887766
+2019-09-03 17:40:15,318 - INFO - city_api.py - get_city_by_id - 15 - you need to query city_id = 99887766
+2019-09-03 17:40:26,506 - INFO - city_api.py - get_city_by_id - 15 - you need to query city_id = 99887766
+2019-09-03 17:40:27,670 - INFO - city_api.py - get_city_by_id - 15 - you need to query city_id = 99887766
