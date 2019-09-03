@@ -26,7 +26,7 @@ init_app(flask_app)
 如果想要信任其他的访问，则为flask_app.run(host='0.0.0.0')
 '''
 if __name__ == '__main__':
-    # 配置日志格式
+    # 配置日志
     log_format(flask_app)
     # flask_app.run()
     flask_app.run(host='0.0.0.0')

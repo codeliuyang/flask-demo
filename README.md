@@ -1,25 +1,23 @@
 # Flask Demo
 
-> This is an example file with default selections.
+> 项目旨在使用Flask作为API微服务的开发框架
+
+Python版本如下
 ```
 $ python --version
 Python 3.6.1
 ```
 
+
 ## Develop
 
-#### 1.相关脚本
-Windows环境脚本
-```
-$ cd falsk-demo
-$ pip list    //show list of installed packages
-```
+以下为开发中常见的说明
 
-#### 2.切换pip的源
+#### 1.切换pip的源
 建议使用国内的镜像源
 
 
-#### 3.编码风格指南
+#### 2.编码风格指南
 严格遵循PEP8，以下列举常见规范
 - 文件名：全小写,可使用下划线
 - 类名称：采用骆驼拼写法
@@ -32,6 +30,7 @@ $ pip list    //show list of installed packages
 
 ## Install
 
+1. 手动添加的依赖脚本如下
 ```
 $ pip install flask
 $ pip install flask-restful
@@ -39,8 +38,14 @@ $ pip install Flask-SQLAlchemy
 $ pip install PyMySQL
 ```
 
+2. 如何自动生成依赖清单
+
+使用```pipreqs```会在项目根目录生成requirements.txt，不过实际下来差了一个PyMySQL需要手动补上。
 ```
-pipreqs ./ --encoding=utf8
+$ pip install pipreqs
+$ cd 项目根目录
+// 如果是windows环境下，需要加上编码
+$ pipreqs ./ --encoding=utf8
 ```
 
 ## Usage
