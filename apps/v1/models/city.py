@@ -15,3 +15,11 @@ class City(db.Model):
         self.country_code = country_code
         self.district = district
         self.population = population
+
+    def to_json(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "country_code": self.country_code,
+            "district": self.district
+        }
