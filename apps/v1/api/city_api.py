@@ -1,9 +1,10 @@
 '''
 以下为使用常规的API形式进行开发
 '''
-from flask import Blueprint, current_app
+from flask import Blueprint, current_app, request, Response
 from db_ext import db
 from apps.v1.models.city import City
+import json
 
 # 声明为蓝图
 city_api = Blueprint('city_api', __name__)
@@ -37,6 +38,15 @@ def update_city_by_id(city_id):
 @city_api.route("", methods=['POST'])
 def add_city():
     city = City(99887766, '上海', 'PVG', 'CHINA', '12')
+    # 获取提交的body中的json数据，是字符串
+    data = request.data
+    # 字符串格式化为json对象
+    current_app.logger.info(data)
+    json_data = json.loads(data)
+    current_app.logger.info(json_data)
+    current_app.logger.info(json_data['name'])
     db.session.add(city)
     db.session.commit()
-    return "add success"
+
+    return Response(json.dumps(json_data), mimetype='application/json')
+    # return Response(data, mimetype='application/json')
